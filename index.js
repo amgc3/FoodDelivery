@@ -2,6 +2,7 @@ require("dotenv").config();
 const mongoose = require('mongoose')
 const express = require('express')
 const app = express()
+const userRouter = require('./routes/user')
 
 const db = mongoose
   .connect(process.env.MONGO_URL, {
@@ -15,6 +16,8 @@ const db = mongoose
 app.get('/', function (req, res) {
   res.send('Hello World')
 })
+
+app.use('/user', userRouter)
  
 app.listen(process.env.PORT, () => {
     console.log(`API listening on http://${process.env.IP}:${process.env.PORT}`);
