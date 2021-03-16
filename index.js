@@ -6,7 +6,7 @@ const userRouter = require('./routes/user');
 const bodyParser = require("body-parser");
 
 app.use(bodyParser.json());
-
+//mongoose.connect(databaseurl)
 const db = mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,

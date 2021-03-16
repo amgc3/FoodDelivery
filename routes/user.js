@@ -24,6 +24,17 @@ router.post('/register', async (req, res) => {
         return res.status(404).json({message: error})
 
     }
+
 })
 
+router.patch("/update/:id", async (req, res) => {
+  User.findByIdAndUpdate(req.params.id, req.body, (err, user) => {
+    if (err) {
+      return res.status(400).send({ error: "unsuccessful" });
+    }
+    res.send({ success: "success" });
+  });
+});
+
 module.exports = router
+
