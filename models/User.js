@@ -14,5 +14,5 @@ const UserSchema = mongoose.Schema({
 
 })
 
-// mongoose.model('ModelName', Schema)
+// mongoose.model('ModelName', Schema) compiles schema into a model
 module.exports = mongoose.model('User', UserSchema)

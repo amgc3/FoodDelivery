@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 const userRouter = require('./routes/user');
 const bodyParser = require("body-parser");
-
+// bodyParser.json([options])
 app.use(bodyParser.json());
 //mongoose.connect(databaseurl)
 const db = mongoose
